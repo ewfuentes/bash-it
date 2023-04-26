@@ -488,8 +488,8 @@ function virtualenv_prompt() {
 }
 
 function condaenv_prompt() {
-	if [[ -n "${CONDA_DEFAULT_ENV:-}" ]]; then
-		echo -ne "${CONDAENV_THEME_PROMPT_PREFIX-}${CONDA_DEFAULT_ENV}${CONDAENV_THEME_PROMPT_SUFFIX-}"
+	if [[ "${CONDA_DEFAULT_ENV:-base}" != "base" ]]; then
+		echo -ne "(${CONDAENV_THEME_PROMPT_PREFIX-}${CONDA_DEFAULT_ENV}${CONDAENV_THEME_PROMPT_SUFFIX-})"
 	fi
 }
 
